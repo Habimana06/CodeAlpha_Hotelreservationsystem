@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <!-- Database connection settings -->
+        <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/hotel_reservation_system?useSSL=false&amp;serverTimezone=UTC&amp;allowPublicKeyRetrieval=true</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password"></property>
+        
+        <!-- JDBC connection pool settings -->
+        <property name="hibernate.connection.pool_size">10</property>
+        
+        <!-- SQL dialect -->
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+        
+        <!-- Echo all executed SQL to stdout -->
+        <property name="hibernate.show_sql">false</property>
+        <property name="hibernate.format_sql">true</property>
+        
+        <!-- Auto create/update tables -->
+        <property name="hibernate.hbm2ddl.auto">update</property>
+        
+        <!-- Current session context -->
+        <property name="hibernate.current_session_context_class">thread</property>
+        
+        <!-- Mapping files -->
+        <mapping class="com.hotel.model.User"/>
+        <mapping class="com.hotel.model.Role"/>
+        <mapping class="com.hotel.model.PrivilegeEntity"/>
+        <mapping class="com.hotel.model.Room"/>
+        <mapping class="com.hotel.model.RoomCategory"/>
+        <mapping class="com.hotel.model.Reservation"/>
+        <mapping class="com.hotel.model.Payment"/>
+        <mapping class="com.hotel.model.CustomerMessage"/>
+    </session-factory>
+</hibernate-configuration>
+
